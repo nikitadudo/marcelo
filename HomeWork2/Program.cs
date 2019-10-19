@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace HomeWork2
 {
@@ -6,27 +6,6 @@ namespace HomeWork2
     {
         private string Name;
         private string Surname;
-        public string name {
-            get
-            {
-                return Name;
-            }
-            set
-            {
-                Name = name;
-            }
-        }
-        public string surname
-        {
-            get
-            {
-                return Surname;
-            }
-            set
-            {
-                Surname = surname;
-            }
-        }
         public Person(string Name, string Surname)
         {
             this.Name = Name;
@@ -34,23 +13,13 @@ namespace HomeWork2
         }
         public virtual void Display()
         {
-            Console.WriteLine($"Name: {name}, surname: {surname}.");
+            Console.Write($"Name: {Name}, surname: {Surname}");
         }
     }
     class Maria : Person
     {
         private int Age;
-        public int age
-        {
-            get
-            {
-                return Age;
-            }
-            set
-            {
-                Age = age;
-            }
-        }
+
 
         public Maria(String Name, string Surname, int Age) : base(Name, Surname)
         {
@@ -58,30 +27,23 @@ namespace HomeWork2
         }
         public override void Display()
         {
-            Console.WriteLine($"Name: {name}, surname: {surname}, age: {age}.");
+            Console.WriteLine();
+            base.Display();
+            Console.Write($", age: {Age}");
         }
     }
     class Michail : Maria
     {
         private string Hobbie;
-        public string hobbie
-        {
-            get
-            {
-                return Hobbie;
-            }
-            set
-            {
-                Hobbie = hobbie;
-            }
-        }
+
         public Michail(string Name, string Surname, int Age, string Hobbie) : base(Name, Surname, Age)
         {
             this.Hobbie = Hobbie;
         }
         public override void Display()
         {
-            Console.WriteLine($"Name: {name}, surname: {surname}, age: {age}, hobbie:{hobbie}.");
+            base.Display();
+            Console.Write($", hobbie: {Hobbie}");
         }
     }
     class Program
